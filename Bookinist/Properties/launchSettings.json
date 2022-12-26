@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Bookinist": {
+      "commandName": "Project",
+      "commandLineArgs": "/main Bookinist.Program"
+    }
+  }
+}
