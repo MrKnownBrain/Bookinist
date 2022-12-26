@@ -1,4 +1,7 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Bookinist.Services;
+using Bookinist.ViewModels;
+
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
 using System;
@@ -15,10 +18,10 @@ namespace Bookinist
         public static IHost Host => __Host ??= Program.CreateHostBuilder(Environment.GetCommandLineArgs()).Build();
 
         public static IServiceProvider Services => Host.Services;
-        internal static void ConfigureServices(HostBuilderContext host, IServiceCollection services)
-        {
+        internal static void ConfigureServices(HostBuilderContext host, IServiceCollection services) => services
+            .AddServices()
+            .AddViewModels();
 
-        }
         protected override async void OnStartup(StartupEventArgs e)
         {
             var host = Host;
